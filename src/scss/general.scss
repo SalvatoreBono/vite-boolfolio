@@ -1,2 +1,17 @@
+@use "./partials/variables" as *;
 @import "bootstrap";
 @import "@fortawesome/fontawesome-free/css/all.min.css";
+body {
+  overflow: hidden;
+  font-family: "Roobert", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #4a4a4c;
+}
+* {
+  scrollbar-width: 6px;
+}
