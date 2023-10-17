@@ -39,16 +39,14 @@ export default {
         </div>
       </div>
     </div>
-    <div>
-      <div class="text-center pt-5">
-        <!-- @click="getApi(link.url) =  Quando viene cliccato, richiama il metodo getApi con l'URL specificato nell'elemento link.url -->
-        <a
-          v-for="link in pagination.links"
-          @click="getApi(link.url)"
-          class="btn btn-primary me-1 ms-1"
-          v-html="link.label"
-        ></a>
-      </div>
+    <div class="text-center pt-5">
+      <!-- @click="getApi(link.url) =  Quando viene cliccato, richiama il metodo getApi con l'URL specificato nell'elemento link.url -->
+      <a
+        v-for="link in pagination.links"
+        @click="getApi(link.url)"
+        class="btn btn-primary me-1 ms-1"
+        v-html="link.label"
+      ></a>
     </div>
   </div>
 </template>

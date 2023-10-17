@@ -6,6 +6,7 @@ import About from "./pages/About.vue";
 import Contact from "./pages/Contact.vue";
 import HomePage from "./pages/Home.vue";
 import Projects from "./pages/Projects.vue";
+import ProjectShow from "./pages/ProjectShow.vue";
 
 //definizione delle routes stile web.php
 const routes = [
@@ -28,6 +29,11 @@ const routes = [
         path: "/projects",
         name: "projects.index",
         component: Projects,
+    },
+    {
+        path: "/projects/:slug",
+        name: "projects.show",
+        component: ProjectShow,
     }
 ]
 const router = createRouter({
