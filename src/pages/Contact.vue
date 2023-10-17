@@ -9,6 +9,6 @@ export default {
 };
 </script>
 
-<template>ciao sono about contact</template>
+<template>ciao sono contact</template>
 
 <style lang="scss" scoped></style>
