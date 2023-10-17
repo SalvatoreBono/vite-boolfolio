@@ -39,7 +39,9 @@ export default {
         {{ project.description }}
       </p>
       <p class="card-text">
-        <small class="text-body-secondary">{{ formatData }}</small>
+        <small class="text-body-secondary">{{
+          formatData(project.date)
+        }}</small>
       </p>
       <div>{{ project.type.type }}</div>
       <div v-for="technology in project.technologies">
