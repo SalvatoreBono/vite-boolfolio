@@ -42,16 +42,25 @@ export default {
         >
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="#">Home</a>
+              <!-- Per creare dei link alle varie pagine occorre usare il tag router-link con l’attributo to. -->
+              <router-link :to="{ name: `home` }" class="nav-link"
+                >Home</router-link
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
+              <router-link :to="{ name: `about` }" class="nav-link"
+                >About</router-link
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Projects</a>
+              <router-link :to="{ name: `projects.index` }" class="nav-link"
+                >Projects</router-link
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
+              <router-link :to="{ name: `contact` }" class="nav-link"
+                >Contact</router-link
+              >
             </li>
           </ul>
         </div>
