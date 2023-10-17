@@ -39,16 +39,14 @@ export default {
         {{ project.description }}
       </p>
       <p class="card-text">
-        <small class="text-body-secondary">{{
-          formatData(project.date)
-        }}</small>
+        <small class="text-body-secondary">{{ formatData }}</small>
       </p>
       <div>{{ project.type.type }}</div>
       <div v-for="technology in project.technologies">
         {{ technology.name }}
       </div>
       <div>
-        <a href="">{{ project.link }}</a>
+        <a href="#">{{ project.link }}</a>
       </div>
     </div>
   </div>
