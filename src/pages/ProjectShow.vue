@@ -43,7 +43,8 @@ export default {
           formatData(project.date)
         }}</small>
       </p>
-      <div>{{ project.type.type }}</div>
+
+      <div v-if="project.type">{{ project.type.type }}</div>
       <div v-for="technology in project.technologies">
         {{ technology.name }}
       </div>
