@@ -1,7 +1,7 @@
 <script>
 export default {
   props: {
-    project: { type: Object },
+    project: { type: Object, required: true },
   },
   components: {},
   data() {
