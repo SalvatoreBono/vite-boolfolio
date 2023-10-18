@@ -2,11 +2,12 @@
 import { createRouter, createWebHistory } from "vue-router";
 
 //importo i componenti delle pages
+import NotFound404 from "./pages/404.vue";
 import About from "./pages/About.vue";
 import Contact from "./pages/Contact.vue";
 import HomePage from "./pages/Home.vue";
-import Projects from "./pages/Projects.vue";
 import ProjectShow from "./pages/ProjectShow.vue";
+import Projects from "./pages/Projects.vue";
 
 //definizione delle routes stile web.php
 const routes = [
@@ -34,6 +35,12 @@ const routes = [
         path: "/projects/:slug",
         name: "projects.show",
         component: ProjectShow,
+    },
+    {
+        // "/:pathMatch(.*)*" è un percorso che cattura qualsiasi URL
+        path: "/:pathMatch(.*)*",
+        name: "not-found-404",
+        component: NotFound404,
     }
 ]
 const router = createRouter({

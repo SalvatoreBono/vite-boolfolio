@@ -15,6 +15,10 @@ export default {
         .get("http://127.0.0.1:8000/api/projects/" + this.$route.params.slug)
         .then((response) => {
           this.project = response.data;
+        })
+        .catch(() => {
+          //this.$router.push({ name: `not-found-404` }); = Reindirizza l'utente alla route con il nome "not-found-404"
+          this.$router.push({ name: `not-found-404` });
         });
     },
     getImg(project) {
