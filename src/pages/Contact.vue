@@ -10,19 +10,22 @@ export default {
         email: "",
         message: "",
       },
-      success: false,
-      error: null,
+      success: null,
+      errors: null,
     };
   },
   methods: {
     sendData() {
       axios
         .post("http://127.0.0.1:8000/api/contacts", this.formData)
-        .then(() => {
-          this.success = true;
+        .then((response) => {
+          //Se la richiesta ha successo, il messaggio di successo viene memorizzato
+          this.success = response.data.message;
+          this.errors = null;
         })
         .catch((e) => {
-          this.error = e.message;
+          // Se si verifica un errore durante la richiesta, il messaggio di errore viene memorizzato
+          this.errors = e.response?.data?.message ?? e.message;
         });
     },
   },
@@ -32,7 +35,10 @@ export default {
 
 <template>
   <div class="pt-5 container">
-    <form @submit.prevent="sendData" class="row g-3">
+    <!-- se error ha un valore stampa l'errore -->
+    <div v-if="errors">{{ errors }}</div>
+    <!-- se success non ha un valore stampa  -->
+    <form v-if="!success" @submit.prevent="sendData" class="row g-3">
       <div class="col-md-6">
         <label for="inputName" class="form-label">Nome</label>
         <input
@@ -66,6 +72,7 @@ export default {
         <button type="submit" class="btn btn-primary">Invia</button>
       </div>
     </form>
+    <div v-if="success">{{ this.success }}</div>
   </div>
 </template>
 
