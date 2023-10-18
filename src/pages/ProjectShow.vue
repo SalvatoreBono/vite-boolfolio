@@ -18,7 +18,9 @@ export default {
         });
     },
     getImg(project) {
-      return `http://127.0.0.1:8000/storage/${project.thumbnail}`;
+      if (project.thumbnail) {
+        return `http://127.0.0.1:8000/storage/${project.thumbnail}`;
+      }
     },
     formatData(data) {
       return dayjs(data).format(`DD/MM/YYYY`);
