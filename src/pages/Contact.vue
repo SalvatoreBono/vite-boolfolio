@@ -72,7 +72,7 @@ export default {
         <button type="submit" class="btn btn-primary">Invia</button>
       </div>
     </form>
-    <div v-if="success">{{ this.success }}</div>
+    <div v-else>{{ success }}</div>
   </div>
 </template>
 
